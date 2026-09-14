@@ -1,15 +1,15 @@
-/* Dark bolt-like theme — matches odinforge Nexus Hub (dark cards, magenta/coral accent) */
+/* Odinforge Nexus Hub theme — matches live site palette (style.css: cyan accent #22d3ee, indigo gradient #6366f1, dark navy surfaces) */
 .uchat-theme-odinforge {
-  --uchat-primary: #e91e63;
-  --uchat-primary-hover: #c2185b;
-  --uchat-bg: #1e1e24;
-  --uchat-header-bg: #15151a;
-  --uchat-header-fg: #f5f0ff;
-  --uchat-bot-bubble: #2a2a33;
-  --uchat-user-bubble: #e91e63;
+  --uchat-primary: #22d3ee;
+  --uchat-primary-hover: #0891b2;
+  --uchat-bg: #12141d;
+  --uchat-header-bg: #0e1017;
+  --uchat-header-fg: #e8eaf2;
+  --uchat-bot-bubble: #0e1017;
+  --uchat-user-bubble: #6366f1;
   --uchat-user-fg: #ffffff;
-  --uchat-text: #e8e6f0;
-  --uchat-muted: #9a97a8;
-  --uchat-radius: 10px;
-  --uchat-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --uchat-text: #e8eaf2;
+  --uchat-muted: #9aa1b4;
+  --uchat-radius: 12px;
+  --uchat-font: 'Outfit', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
