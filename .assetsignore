@@ -1,0 +1,3 @@
+# Exclude .git directory from static asset uploads.
+# (The .git/ folder is read but must never be served or uploaded.)
+.git
