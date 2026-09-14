@@ -45,7 +45,7 @@
       placeholder: 'Écrivez votre question...',
       welcome: 'Bonjour ! Je suis le chatbot du restaurant. Je peux vous aider avec le menu, les prix, les heures d\u2019ouverture et bien plus. Que souhaitez-vous savoir ?',
       thinking: ['Un instant...', 'Je vérifie...', 'Une seconde...'],
-      defaultResponse: 'Je suis le chatbot du restaurant, je peux vous aider avec des informations sur notre menu, nos prix, nos heures d\u2019ouverture, nos méthodes de contact, et plus encore. Que souhaitez-vous savoir ?',
+      defaultResponse: 'Je peux vous aider avec le menu, les prix, les heures d\u2019ouverture, nos méthodes de contact, et plus. Que souhaitez-vous savoir ?',
     },
     suggestions: [
       { label: 'Le menu', q: 'Quel est votre menu ?' },
@@ -124,7 +124,7 @@
         { terms: ['ailes de poulet', 'ailes'], answer: MENU.ailes + ' Combien en voulez-vous ?' },
         { terms: ['burger le plus populaire', 'meilleur burger', 'burger'], answer: 'Notre burger le plus populaire est le Burger ! Il est garni de ' + MENU.burgers + ' Il ne vient pas avec des frites, mais vous pouvez en ajouter pour 5,25 $ (mini) à 11,00 $ (grosse).' },
         { terms: ['extra viande', 'extra fromage', 'extras disponibles'], answer: MENU.extras + ' Que souhaitez-vous ?' },
-        { terms: ['spaghetti épicé'], answer: 'Le Spaghetti épicé contient des piments, donc il a une touche épicée, mais ce n\u2019est pas trop fort grâce au pepperoni, aux champignons et au fromage gratiné. Ça coûte 12,25 $ (demi) ou 16,25 $ (complet). Voulez-vous l\u2019essayer ?' },
+        { terms: ['spaghetti épicé'], answer: 'Spicy but mild enough — pepperoni, mushrooms, and gratinéed cheese balance the heat. 12,25 $ (demi) ou 16,25 $ (complet). Voulez-vous l\u2019essayer ?' },
         { terms: ['spaghetti', 'pâtes', 'pates'], answer: 'Nous proposons : ' + MENU.pates.join(' | ') + ' Lequel préférez-vous ?' },
         { terms: ['lasagne'], answer: 'La lasagne classique avec sauce à la viande coûte 14,00 $. Nous avons aussi une version à 15,75 $. Laquelle vous intéresse ?' },
         { terms: ['pizza', 'pizzas'], answer: 'Nous avons plusieurs pizzas délicieuses : ' + MENU.pizzas.join(', ') + '. Quelle pizza vous tente ?' },
@@ -143,7 +143,7 @@
         { terms: ['taxes'], answer: 'Les prix affichés n\u2019incluent pas les taxes, qui seront ajoutées à votre facture. Par exemple, une poutine moyenne à 12,25 $ aura des taxes en sus. Voulez-vous plus de détails ?' },
         { terms: ['combien de temps'], answer: 'Une poutine prend généralement 5 à 10 minutes à préparer, selon la taille et les extras. Voulez-vous en commander une ?' },
         { terms: ['plat du jour', 'plat du jour', 'spécial du jour', 'special du jour', 'spécialité', 'specialite', 'spécial'], answer: 'Notre plat du jour change chaque jour — demandez à notre personnel qu\u2019elle est la spécialité aujourd\u2019hui (souvent autour de 12,00 $ à 15,00 $). Souhaitez-vous voir le menu complet ?' },
-        { terms: ['menu'], answer: 'Notre menu propose une variété de plats délicieux ! Nous avons des entrées comme les bâtonnets de fromage (7,00 $), des poutines (' + MENU.poutines.map(p => p.split(' — ')[0]).join(', ') + '), des pâtes comme le spaghetti (10,50 $ à 16,25 $), des pizzas (10,00 $ à 29,00 $), et des burgers à 11,25 $. Consultez la section « Notre Menu » pour plus de détails, ou dites-moi ce qui vous tente !' }
+        { terms: ['menu'], answer: 'Nous avons des entrées (bâtonnets de fromage 7,00 $), des poutines (' + MENU.poutines.map(p => p.split(' — ')[0]).join(', ') + '), des pâtes (10,50 $ à 16,25 $), des pizzas (10,00 $ à 29,00 $) et des burgers à 11,25 $. Consultez « Notre Menu » ou dites-moi ce qui vous tente !' }
       ],
       topics: {
         poutine: {

@@ -9,7 +9,7 @@ window.ChatBotData = {
     placeholder: 'Ask about Stephane...',
     welcome: "Hello! I'm Odin, Stephane's AI assistant. Ask me about his AI experience, certifications, projects, or how to hire him — or tap a suggestion below.",
     thinking: ['Thinking...', 'Let me check...', 'One sec...', 'Hmm, good question...'],
-    defaultResponse: "Good question — I'm an in-browser demo, so I don't have an answer for everything yet. I can help with: skills, AI experience, certifications, projects, availability, rates, and contact. Type 'help' or tap a suggestion."
+    defaultResponse: "I can help with: skills, AI experience, certifications, projects, availability, rates, and contact. Tap a suggestion or try 'help'."
   },
   suggestions: [
     { label: 'Skills', q: 'What are Stephane\'s skills?' },
@@ -47,7 +47,7 @@ window.ChatBotData = {
     identity: {
       terms: ['who are you', 'what are you', 'are you ai', 'are you a bot', 'your name', 'who is odin'],
       answers: [
-        "I'm Odin, a lightweight AI assistant running in this page's JavaScript — a small demo of the agentic work Stephane does. Ask me about his skills, experience, certifications, or résumé!",
+        "I'm Odin, Stephane's AI assistant — a lightweight in-browser demo of the agentic work he does. Ask me about his skills, experience, or projects.",
         "I'm Odin — Stephane's portfolio assistant. I answer questions about his background and work, entirely in the browser."
       ]
     },
@@ -61,8 +61,8 @@ window.ChatBotData = {
     help: {
       terms: ['help', 'assist', 'what can you do', 'capabilities', 'commands'],
       answers: [
-        "I help recruiters and visitors fast: his skills, AI experience, certifications, projects, availability, rates, and contact. Try 'Is he available for work?', 'What are his rates?', or 'Tell me about his certifications'.",
-        "Ask me about Stephane's background, his certifications, projects, or how to reach him — for example 'What is his experience with AI?'"
+        "I can tell you about his skills, AI experience, certifications, projects, availability, rates, and contact. Try a suggestion or ask anything.",
+        "Ask about Stephane's background, certifications, projects, or how to reach him."
       ]
     }
   },
@@ -90,28 +90,27 @@ window.ChatBotData = {
       } },
       { terms: ['experience', 'career', 'background', 'timeline', 'jobs', 'job', 'worked', 'work history', 'history'], answer: function () {
         const p = window.ChatBotData.person;
-        return `Here's ${p.name}'s career timeline:\n\n` +
-          `• AI Agent Operator — Invisible Technologies (San Francisco, remote), May 2025–present\n` +
+        return `Career timeline:\n\n` +
+          `• AI Agent Operator — Invisible Technologies (remote), May 2025–present\n` +
           `• AI Developer & Full-Stack Engineer — OdinForge (founder), Jan 2015–present\n` +
           `• Python & ESL Tutor — OMG Language Center (Thailand), Feb 2021–present\n` +
           `• Digital Marketing & Dive Instructor — Dolphin Divers (Thailand), 2018–2020\n` +
-          `• Automobile Sales — Mercedes-Benz, Ford, Audi (Canada), 2004–2014 (top 10% performer)\n\n` +
-          `The through-line: 20 years of client-facing work, now focused on AI agents and automation. ${p.workDetail}`;
+          `• Automobile Sales — Mercedes-Benz, Ford, Audi (Canada), 2004–2014\n\n` +
+          `20 years of client-facing work, now focused on AI agents and automation.`;
       } },
       { terms: ['skill', 'expertise', 'technolog', 'stack', 'languages', 'language', 'tools', 'knows', 'know', 'what does he know', 'capable', 'program', 'code', 'write code'], answer: function () {
         const s = window.ChatBotData.person.skills;
-        return `Stephane's core skills:\n\n` +
+        return `Core skills:\n\n` +
           `• AI & LLM: ${s.ai}\n` +
           `• Programming: ${s.programming}\n` +
-          `• Tools & Platforms: ${s.tools}\n` +
-          `• Automation & Data: ${s.data}\n\n` +
-          `He works in ${window.ChatBotData.person.languages.join(' and ')}.`;
+          `• Tools: ${s.tools}\n` +
+          `• Data & Automation: ${s.data}`;
       } },
       { terms: ['project', 'portfolio', 'built', 'made', 'odinforge', 'maplemind', 'agent evidence', 'what has he built', 'work he has done', 'what is odin', 'odin agent', 'the agent', 'ai agent'], answer: function () {
         const p = window.ChatBotData.person;
-        let out = `Here's what ${p.name} has built:\n\n`;
+        let out = `What ${p.name} has built:\n\n`;
         p.projects.forEach((pr, i) => { out += `${i + 1}. ${pr.name} — ${pr.desc}\n`; });
-        out += `\nYou can browse his full app collection at https://odinforge.stephanedube.dev`;
+        out += `\nFull collection: https://odinforge.stephanedube.dev`;
         return out;
       } },
       { terms: ['location', 'where is he', 'where is stephane', 'based', 'live', 'lives', 'country', 'timezone', 'remote'], answer: function () {
@@ -123,22 +122,22 @@ window.ChatBotData = {
       } },
       { terms: ['contact', 'email', 'reach', 'get in touch', 'message', 'talk to', 'connect', 'mail'], answer: function () {
         const p = window.ChatBotData.person;
-        return `You can reach ${p.name} at:\n\n` +
+        return `Reach ${p.name} at:\n\n` +
           `Email: ${p.contactEmail}\n` +
           `LinkedIn: ${p.links.linkedin}\n` +
           `GitHub: ${p.links.github}\n` +
-          `YouTube: ${p.links.youtube} ("White hair in tech")\n` +
+          `YouTube: ${p.links.youtube}\n` +
           `Credly: ${p.links.credly}\n\n` +
           `${p.availability}`;
       } },
       { terms: ['github', 'linkedin', 'twitter', 'social', 'x profile', 'x.com', 'youtube', 'white hair', 'channel', 'video', 'videos'], answer: function () {
         const p = window.ChatBotData.person;
-        return `Here are ${p.name}'s profiles:\n` +
-          `• YouTube "White hair in tech" — ${p.links.youtube}\n` +
-          `• GitHub: ${p.links.github}\n` +
-          `• LinkedIn: ${p.links.linkedin}\n` +
-          `• Credly: ${p.links.credly}\n\n` +
-          `Or email him at ${p.contactEmail}`;
+        return `Profiles:\n` +
+          `• YouTube — ${p.links.youtube}\n` +
+          `• GitHub — ${p.links.github}\n` +
+          `• LinkedIn — ${p.links.linkedin}\n` +
+          `• Credly — ${p.links.credly}\n\n` +
+          `Or email: ${p.contactEmail}`;
       } }
     ],
     topics: {
@@ -225,7 +224,7 @@ window.ChatBotData.person = {
     url: 'https://www.skills.google/public_profiles/04a83f8f-3acf-40f5-9893-2fe1a235a5d3'
   },
   credly: 'https://www.credly.com/users/stephanedube',
-  contactEmail: 'dubestephane@protonmail.com',
+  contactEmail: 'stephane@stephanedube.dev',
   links: {
     github: 'https://github.com/Dubestephane1',
     linkedin: 'https://www.linkedin.com/in/dubestephane/',
@@ -234,8 +233,8 @@ window.ChatBotData.person = {
   },
   resume: 'Stephane_Dube.html',
   availability: 'Open to new opportunities and collaborations — full-time, freelance, or contract, remote-first.',
-  hiring: "For hiring, the fastest path is email: dubestephane@protonmail.com. His résumé is one click away (the Resume button in the menu), and all verified badges are on Credly.",
-  rates: 'Rates are tailored to each project\'s scope — reach out at dubestephane@protonmail.com for a quote.'
+  hiring: "For hiring, the fastest path is email: stephane@stephanedube.dev. His résumé is one click away (the Resume button in the menu), and all verified badges are on Credly.",
+  rates: 'Rates are tailored to each project\'s scope — reach out at stephane@stephanedube.dev for a quote.'
 };
 
 window.ChatBotConfig = {

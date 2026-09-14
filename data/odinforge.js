@@ -9,7 +9,7 @@ window.ChatBotData = {
     placeholder: 'Enter a message...',
     welcome: "Hi there! I'm the Nexus Hub assistant. Ask me about any project here, like MapleMind, the games, or the author. Type 'help' to see what I can do.",
     thinking: ['Thinking...', 'Let me check...', 'One sec...', "Hmm, good question..."],
-    defaultResponse: "I don't know about that yet, but I can tell you about any project on this hub. Try 'MapleMind', 'Agent Evidence', 'Pomodoro', 'Tetris', or the 'Scratch' games — or type 'help'. If you'd like, you can ask the author directly at dubestephane@protonmail.com"
+    defaultResponse: "I can tell you about any project on this hub — try 'MapleMind', 'Agent Evidence', 'Pomodoro', 'Tetris', or the 'Scratch' games. Or type 'help'."
   },
   suggestions: [
     { label: 'What is MapleMind?', q: 'What is MapleMind?' },
@@ -52,11 +52,11 @@ window.ChatBotData = {
   },
   knowledge: {
     intents: [
-      { terms: ['about the author', 'who made you', 'who created you', 'who is the author', 'about author', 'about stephane', 'who is stephane', 'about you maker'], answer: "Stephane Dube is a Canadian developer and AI enthusiast based in Southeast Asia, specializing in Python, web development, and integrating AI into practical applications. He built the Odin Nexus Hub to showcase his projects, including AI tools, games, and education apps." },
-      { terms: ['contact', 'reach', 'email', 'hire', 'get in touch', 'linkedin', 'github'], answer: "You can reach Stephane by email at dubestephane@protonmail.com, or message him on LinkedIn at https://www.linkedin.com/in/dubestephane/ . He's also on GitHub at https://github.com/Dubestephane1 — always open to new opportunities and collaborations!" },
-      { terms: ['build an ai', 'build ai', 'make an ai', 'create an ai', 'can you build', 'can he build', 'ai agent'], answer: "Yes! Stephane can definitely build AI agents. He specializes in Python and AI agent development, and built 'Odin', a custom AI agent from scratch that handles multi-step reasoning, tool use, planning, and autonomous task execution. He also works professionally as an AI Agent Operator. He can build custom agents, integrations, and automation workflows for you." },
-      { terms: ['maple mind', 'maplemind', 'maple', 'real estate', 'document'], answer: "MapleMind is a private AI document intelligence platform built for real estate offices and professional firms. It runs 100% locally with no cloud dependency, indexing contracts, inspection reports, and policies so you can find anything in seconds by asking in plain language. Try it at https://maplemind.netlify.app/" },
-      { terms: ['agent evidence', 'agentevidence', 'safety review'], answer: "Agent Evidence is an independent safety and governance review service for AI agents. It provides structured risk reports with file:line evidence, prioritized recommendations, and a 3-day turnaround — built to help teams close enterprise deals faster. Check it out at https://agentevidence.netlify.app/" },
+      { terms: ['about the author', 'who made you', 'who created you', 'who is the author', 'about author', 'about stephane', 'who is stephane', 'about you maker'], answer: "Stephane Dube is a Canadian developer and AI enthusiast based in Southeast Asia, specializing in Python, web development, and AI. He built this hub to showcase his projects — AI tools, games, and education apps." },
+      { terms: ['contact', 'reach', 'email', 'hire', 'get in touch', 'linkedin', 'github'], answer: "Email Stephane at contact@stephanedube.dev, or find him on LinkedIn (linkedin.com/in/dubestephane) and GitHub (github.com/Dubestephane1). Open to new opportunities." },
+      { terms: ['build an ai', 'build ai', 'make an ai', 'create an ai', 'can you build', 'can he build', 'ai agent'], answer: "Yes! He specializes in Python AI agents — he built 'Odin', a custom agent with multi-step reasoning, tool use, planning, and autonomous execution, and works professionally as an AI Agent Operator. He can build custom agents, integrations, and automation workflows." },
+      { terms: ['maple mind', 'maplemind', 'maple', 'real estate', 'document'], answer: "MapleMind is a private AI document intelligence platform for real estate and professional firms. 100% local, no cloud — ask plain-language questions about contracts, reports, and policies. Try it: https://maplemind.netlify.app/" },
+      { terms: ['agent evidence', 'agentevidence', 'safety review'], answer: "Agent Evidence is an independent safety & governance review service for AI agents — structured risk reports with file:line evidence and a 3-day turnaround. Check it out: https://agentevidence.netlify.app/" },
       { terms: ['nostradamus', 'quatrains', 'prophecies'], answer: "Nostradamus Prophecies lets you explore all 942 quatrains of the famous 16th-century prophet, organized for easy browsing and searching. Visit https://nostradamus.stephanedube.dev" },
       { terms: ['pomodoro'], answer: "The Pomodoro tool is a productivity app that implements the Pomodoro Technique — timed focus sessions with short breaks to help you get more done. Try it at https://pomodoro.stephanedube.dev/" },
       { terms: ['personal website', 'personal site', 'stephanedube', 'stephane dube', 'portfolio', 'portfolio site', 'website'], answer: "The personal website is Stephane Dube's portfolio, showcasing his work as a developer, Python programmer, and AI builder — including an about section, featured projects, and skills. See it at https://stephane.stephanedube.dev" },
@@ -66,17 +66,17 @@ window.ChatBotData = {
       { terms: ['tic tac toe', 'tictactoe', 'tic tac'], answer: "Tic Tac Toe Game is a classic game for one or two players, with two game modes and ten skins to choose from. Play it at https://tictactoe.stephanedube.dev/" },
       { terms: ['tetris'], answer: "Tetris Game is the classic puzzle game where you rotate and arrange falling blocks to clear lines. Play it at https://tetris.stephanedube.dev/" },
       { terms: ['hangman'], answer: "Kids Hangman is a fun and educational game that helps children practice their vocabulary while playing. Play it at https://hangman.stephanedube.dev/" },
-      { terms: ['scratch', 'mit scratch'], answer: "There are three M.I.T. Scratch games on this hub: 'Add, Subtract, Multiply' for practicing math (great for 7 to 10 year olds), 'Guess the Number' (guess between 1 and 100 in 10 tries or less), and 'Firefly Chase' (guide the firefly with your mouse and avoid the frozen ball)." },
+      { terms: ['scratch', 'mit scratch'], answer: "Three M.I.T. Scratch games: 'Add, Subtract, Multiply' (math practice, ages 7-10), 'Guess the Number' (1-100 in 10 tries), and 'Firefly Chase' (guide the firefly, avoid the frozen ball)." },
       { terms: ['nexus hub', 'this hub', 'this site', 'odin hub', 'hub'], answer: "Welcome to the Odin Nexus Hub — a curated collection of projects, tools, and games built by Stephane Dube. You can search the cards above, or ask me about any project here." }
     ],
     topics: {
       ai: {
         keywords: ['ai', 'a.i', 'artificial intelligence', 'intelligence'],
-        answer: "The AI section features two projects: MapleMind, a private local AI document intelligence platform for real estate and professional firms, and Agent Evidence, a safety and governance review service for AI agents. Ask me about either for more detail!"
+        answer: "Two AI projects: MapleMind (private local AI document intelligence) and Agent Evidence (safety & governance reviews for AI agents). Ask me about either!"
       },
       games: {
         keywords: ['games', 'game'],
-        answer: "We have several games! Tic Tac Toe, Tetris, and Kids Hangman in the Games section, plus three M.I.T. Scratch games: Add/Subtract/Multiply, Guess the Number, and Firefly Chase."
+        answer: "Games: Tic Tac Toe, Tetris, and Kids Hangman, plus three M.I.T. Scratch games: Add/Subtract/Multiply, Guess the Number, and Firefly Chase."
       },
       tools: {
         keywords: ['tools', 'tool', 'websites'],
