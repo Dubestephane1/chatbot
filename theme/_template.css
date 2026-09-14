@@ -1,0 +1,15 @@
+/* Chatbot theme template — copy this to theme/<site>.css and override the variables. */
+.uchat-theme-default {
+  --uchat-primary: #2563eb;
+  --uchat-primary-hover: #1d4ed8;
+  --uchat-bg: #ffffff;
+  --uchat-header-bg: #2563eb;
+  --uchat-header-fg: #ffffff;
+  --uchat-bot-bubble: #f1f5f9;
+  --uchat-user-bubble: #2563eb;
+  --uchat-user-fg: #ffffff;
+  --uchat-text: #0f172a;
+  --uchat-muted: #64748b;
+  --uchat-radius: 12px;
+  --uchat-font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}

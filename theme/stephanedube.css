@@ -1,0 +1,15 @@
+/* OdinCSS-ish clean theme — matches stephanedube portfolio (azure #4169E1 accents) */
+.uchat-theme-stephanedube {
+  --uchat-primary: #4169E1;
+  --uchat-primary-hover: #3158d0;
+  --uchat-bg: #ffffff;
+  --uchat-header-bg: #4169E1;
+  --uchat-header-fg: #ffffff;
+  --uchat-bot-bubble: #eef2ff;
+  --uchat-user-bubble: #4169E1;
+  --uchat-user-fg: #ffffff;
+  --uchat-text: #1f2430;
+  --uchat-muted: #8b94a7;
+  --uchat-radius: 12px;
+  --uchat-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}

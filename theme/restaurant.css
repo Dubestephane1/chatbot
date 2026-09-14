@@ -1,0 +1,15 @@
+/* Warm classic theme — matches restaurant site (bootstrap primary / warm amber) */
+.uchat-theme-restaurant {
+  --uchat-primary: #e6a817;
+  --uchat-primary-hover: #c99210;
+  --uchat-bg: #fffaf0;
+  --uchat-header-bg: #274c43;
+  --uchat-header-fg: #ffffff;
+  --uchat-bot-bubble: #f3ead1;
+  --uchat-user-bubble: #e6a817;
+  --uchat-user-fg: #1f1a10;
+  --uchat-text: #2c2418;
+  --uchat-muted: #8a7f6a;
+  --uchat-radius: 14px;
+  --uchat-font: 'Georgia', 'Times New Roman', serif;
+}

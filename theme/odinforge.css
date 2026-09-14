@@ -1,0 +1,15 @@
+/* Dark bolt-like theme — matches odinforge Nexus Hub (dark cards, magenta/coral accent) */
+.uchat-theme-odinforge {
+  --uchat-primary: #e91e63;
+  --uchat-primary-hover: #c2185b;
+  --uchat-bg: #1e1e24;
+  --uchat-header-bg: #15151a;
+  --uchat-header-fg: #f5f0ff;
+  --uchat-bot-bubble: #2a2a33;
+  --uchat-user-bubble: #e91e63;
+  --uchat-user-fg: #ffffff;
+  --uchat-text: #e8e6f0;
+  --uchat-muted: #9a97a8;
+  --uchat-radius: 10px;
+  --uchat-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}

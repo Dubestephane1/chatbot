@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniversalChatbot — demo</title>
+  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="theme/stephanedube.css">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #222; }
+    h1 { font-size: 28px; }
+    .badge { display: inline-block; background: #eef2ff; color: #4169E1; padding: 3px 10px; border-radius: 999px; font-size: 13px; margin-bottom: 12px; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .switch { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+    button { padding: 8px 16px; border-radius: 8px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 14px; }
+    button.active { background: #4169E1; color: #fff; border-color: #4169E1; }
+    p { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <span class="badge">UniversalChatbot demo</span>
+  <h1>One engine, three sites</h1>
+  <p>This page loads the same <code>chatbot.js</code> with three different data files + themes.
+     Use the buttons to switch which persona is active, then open the chat bubble bottom-right.</p>
+
+  <div class="switch">
+    <button data-site="stephanedube" class="active">Stephane Dube (portfolio)</button>
+    <button data-site="odinforge">OdinForge (hub)</button>
+    <button data-site="restaurant">Restaurant (FR)</button>
+  </div>
+
+  <h2>How embedding works</h2>
+  <p>Any website just needs three lines (adjust paths/theme as needed):</p>
+  <pre><code>&lt;link rel="stylesheet" href="https://chatbot.stephanedube.dev/chatbot.css"&gt;
+&lt;link rel="stylesheet" href="https://chatbot.stephanedube.dev/theme/&lt;site&gt;.css"&gt;
+&lt;script src="https://chatbot.stephanedube.dev/data/&lt;site&gt;.js"&gt;&lt;/script&gt;
+&lt;script src="https://chatbot.stephanedube.dev/chatbot.js"&gt;&lt;/script&gt;</code></pre>
+  <p>The engine injects its own widget — no markup needed on the page.</p>
+
+  <script>
+    // Switch persona by swapping data+theme
+    const CURRENT = { data: 'data/stephanedube.js', theme: 'theme/stephanedube.css' };
+
+    function loadSite(site) {
+      const cfg = {
+        stephanedube: { data: 'data/stephanedube.js', theme: 'theme/stephanedube.css' },
+        odinforge:    { data: 'data/odinforge.js',    theme: 'theme/odinforge.css' },
+        restaurant:   { data: 'data/restaurant.js',   theme: 'theme/restaurant.css' },
+      }[site];
+      if (!cfg) return;
+      // remove old chatbot
+      const old = document.getElementById('uchat-root');
+      if (old) old.remove();
+      delete window.ChatBotData;
+      delete window.ChatBotConfig;
+      delete window.ChatBot;
+      // swap theme link
+      const link = document.querySelector('link[data-chatbot-theme]');
+      link.href = cfg.theme;
+      // load data then re-boot engine
+      loadScript(cfg.data, () => {
+        // engine boots on DOMContentLoaded; remove and re-add to force reboot
+        const engine = document.querySelector('script[data-chatbot-engine]');
+        engine.remove();
+        const s = document.createElement('script');
+        s.src = 'chatbot.js';
+        s.setAttribute('data-chatbot-engine', '');
+        document.body.appendChild(s);
+      });
+    }
+
+    function loadScript(src, cb) {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = cb;
+      document.body.appendChild(s);
+    }
+
+    document.querySelectorAll('.switch button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.switch button').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadSite(btn.dataset.site);
+      });
+    });
+  </script>
+
+  <!-- Theme link swapped by the switcher above -->
+  <link rel="stylesheet" data-chatbot-theme href="theme/stephanedube.css">
+  <!-- Default persona (stephanedube) -->
+  <script data-chatbot-data src="data/stephanedube.js"></script>
+  <script data-chatbot-engine src="chatbot.js"></script>
+</body>
+</html>
