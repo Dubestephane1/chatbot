@@ -248,7 +248,9 @@
     }
 
     messagesEmpty() {
-      return !this.el.messages.querySelector('.uchat-msg');
+      // Chips stay visible until the user has actually sent a message.
+      // The welcome bot-message must not count as "engaged".
+      return !this.el.messages.querySelector('.user-msg');
     }
 
     /* ---------------- messages ---------------- */
