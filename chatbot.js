@@ -221,6 +221,8 @@
     bindEvents() {
       const that = this;
       this.el.toggler.addEventListener('click', () => this.toggleOpen());
+      const closeBtn = this.el.header.querySelector('.uchat-close');
+      if (closeBtn) closeBtn.addEventListener('click', () => this.toggleOpen());
       this.el.send.addEventListener('click', () => this.handleSend());
       this.el.input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.handleSend(); }
